@@ -1,2 +1,6 @@
+import customtkinter as ctk
+from ui import App
+
 if __name__ == "__main__":
-    print("It's quiet in here... too quiet")
+    app = App()
+    app.mainloop()
