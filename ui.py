@@ -27,22 +27,28 @@ class SidebarFrame(CTkFrame):
 
         # --- GRID CONFIGURATION INSIDE THE FRAME ---
         # We want the buttons to stay at the top, but let an empty middle row 
-        # (Row 2) expand to push the "Logout" button to the bottom.
-        self.grid_rowconfigure(2, weight=1) 
+        # (Row 2) expand to push the "Exit Program" button to the bottom.
+        self.grid_rowconfigure(4, weight=1) 
         self.grid_columnconfigure(0, weight=1) # Buttons fill the width
 
         # Widgets
         self.title_label = CTkLabel(self, text="Menu", font=("Arial", 18, "bold"))
         self.title_label.grid(row=0, column=0, padx=20, pady=20)
-
+        
+        # Main Dashboard
         self.btn_1 = CTkButton(self, text="Dashboard")
         self.btn_1.grid(row=1, column=0, padx=20, pady=10)
 
-        # Row 2 is empty but has weight=1, so it acts as a flexible spacer!
-        
-        self.btn_logout = CTkButton(self, text="Logout", fg_color="red", command=lambda: rand("NOT WHATEVER BRO!!!!"))
-        self.btn_logout.grid(row=3, column=0, padx=20, pady=20)
+        # Card Editor
+        self.btn_2 = CTkButton(self, text="Card Group Editor")
+        self.btn_2.grid(row=2, column=0, padx=20, pady=10)
 
-def rand(msg: str = "WHATEVER BRO") -> None:
-    print(msg)
-    return None
+        # Settings
+        self.btn_3 = CTkButton(self, text="Settings")
+        self.btn_3.grid(row=3, column=0, padx=20, pady=10)
+
+        # Row 4 is empty but has weight=1, so it acts as a flexible spacer!
+        
+        self.btn_logout = CTkButton(self, text="Exit Program", fg_color="red", command=self.master.destroy)
+        self.btn_logout.grid(row=5, column=0, padx=20, pady=20)
+
