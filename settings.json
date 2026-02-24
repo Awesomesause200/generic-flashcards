@@ -1,0 +1,6 @@
+{
+    "appearance_mode": "System",
+    "top_n": 3,
+    "bottom_n": 3,
+    "force_eval": false
+}
